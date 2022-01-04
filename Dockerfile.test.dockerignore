@@ -1,0 +1,15 @@
+log/**/*
+tmp/**/*
+.env
+.env.test
+/coverage
+/.bundle
+/.git
+/.env.*
+/.rubocop*
+/.ruby-version
+/azure-pipelines.yml
+/docker-compose*
+/Dockerfile*
+/Vagrantfile
+/docker

@@ -21,6 +21,6 @@ gem 'azure_env_secrets', git: 'https://github.com/ministryofjustice/azure_env_se
 group :development, :test do
   gem 'factory_bot_rails', '~> 6.1'
 end
-
+gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
 gem 'et_azure_insights', '0.2.12', git: 'https://github.com/hmcts/et-azure-insights.git', tag: 'v0.2.12'
 gem 'application_insights', git: 'https://github.com/microsoft/ApplicationInsights-Ruby.git', ref: '5db6b4'
