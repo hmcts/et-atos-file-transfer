@@ -105,6 +105,10 @@ GEM
     connection_pool (2.2.3)
     crass (1.0.6)
     diff-lcs (1.4.4)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubi (1.10.0)
     factory_bot (6.1.0)
       activesupport (>= 5.0.0)
@@ -217,6 +221,7 @@ PLATFORMS
 DEPENDENCIES
   application_insights!
   azure_env_secrets!
+  dotenv-rails (~> 2.7, >= 2.7.6)
   et_atos_file_transfer!
   et_azure_insights (= 0.2.12)!
   factory_bot_rails (~> 6.1)
