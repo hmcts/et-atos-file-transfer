@@ -20,6 +20,7 @@ EXPOSE 8080
 COPY --chown=app:app . /home/app/atos
 RUN chown -R app:app /usr/local/bundle
 RUN apk add --no-cache runit unzip zip libpq-dev tzdata gettext shared-mime-info bash && \
+    apk add --no-cache postgresql-client~=11.12 --repository=http://dl-cdn.alpinelinux.org/alpine/v3.10/main && \
     apk add --no-cache --virtual .build-tools git build-base && \
     cd /home/app/atos && \
     gem install bundler -v 1.17.3 && \
