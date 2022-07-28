@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_14_062523) do
-
+ActiveRecord::Schema[7.0].define(version: 2022_07_28_051248) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,7 +19,7 @@ ActiveRecord::Schema.define(version: 2021_01_14_062523) do
     t.string "record_type", null: false
     t.bigint "record_id", null: false
     t.bigint "blob_id", null: false
-    t.datetime "created_at", null: false
+    t.datetime "created_at", precision: nil, null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
   end
@@ -31,8 +30,8 @@ ActiveRecord::Schema.define(version: 2021_01_14_062523) do
     t.string "content_type"
     t.text "metadata"
     t.bigint "byte_size", null: false
-    t.string "checksum", null: false
-    t.datetime "created_at", null: false
+    t.string "checksum"
+    t.datetime "created_at", precision: nil, null: false
     t.string "service_name", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
@@ -46,8 +45,8 @@ ActiveRecord::Schema.define(version: 2021_01_14_062523) do
   create_table "exported_files", force: :cascade do |t|
     t.string "filename"
     t.string "content_type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.bigint "external_system_id"
     t.index ["external_system_id"], name: "index_exported_files_on_external_system_id"
   end
@@ -56,8 +55,8 @@ ActiveRecord::Schema.define(version: 2021_01_14_062523) do
     t.bigint "external_system_id", null: false
     t.string "key", null: false
     t.string "value", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.index ["external_system_id"], name: "index_external_system_configurations_on_external_system_id"
   end
 
@@ -66,8 +65,8 @@ ActiveRecord::Schema.define(version: 2021_01_14_062523) do
     t.string "reference", null: false
     t.integer "office_codes", default: [], array: true
     t.boolean "enabled", default: true
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.index ["reference"], name: "index_external_systems_on_reference", unique: true
   end
 
