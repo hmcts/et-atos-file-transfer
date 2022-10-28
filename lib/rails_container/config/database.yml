@@ -27,7 +27,7 @@ default: &default
 
 development:
   <<: *default
-  database: '<%= ENV.fetch('DB_NAME', 'et_atos_development') %>'
+  database: '<%= ENV.fetch('DB_NAME', 'et_api_development') %>'
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -84,4 +84,4 @@ test:
 #
 production:
   <<: *default
-  database: '<%= ENV.fetch('DB_NAME', 'et_atos_production') %>'
+  database: '<%= ENV.fetch('DB_NAME', 'et_api_production') %>'
