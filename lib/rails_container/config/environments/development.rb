@@ -48,6 +48,15 @@ Rails.application.configure do
   # Highlight code that triggered database queries in logs.
   config.active_record.verbose_query_logs = true
 
+  config.hosts.clear
+
+  config.log_level = ENV.fetch('RAILS_LOG_LEVEL', 'debug').to_sym
+
+  if ENV["RAILS_LOG_TO_STDOUT"].present?
+    logger           = ActiveSupport::Logger.new(STDOUT)
+    logger.formatter = config.log_formatter
+    config.logger    = ActiveSupport::TaggedLogging.new(logger)
+  end
 
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
